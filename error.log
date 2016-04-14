@@ -1,0 +1,9 @@
+[Thu Apr 14 17:53:57.506716 2016] [:error] [pid 17806] [client 127.0.0.1:38784] PHP Parse error:  syntax error, unexpected end of file in /home/serg/site/baraoke/wp-content/themes/baraoke/template-parts/content-index.php on line 136, referer: http://baraoke.tes/
+[Thu Apr 14 17:53:57.506832 2016] [:error] [pid 17806] [client 127.0.0.1:38784] PHP Stack trace:, referer: http://baraoke.tes/
+[Thu Apr 14 17:53:57.506886 2016] [:error] [pid 17806] [client 127.0.0.1:38784] PHP   1. {main}() /home/serg/site/baraoke/index.php:0, referer: http://baraoke.tes/
+[Thu Apr 14 17:53:57.506912 2016] [:error] [pid 17806] [client 127.0.0.1:38784] PHP   2. require() /home/serg/site/baraoke/index.php:17, referer: http://baraoke.tes/
+[Thu Apr 14 17:53:57.506933 2016] [:error] [pid 17806] [client 127.0.0.1:38784] PHP   3. require_once() /home/serg/site/baraoke/wp-blog-header.php:16, referer: http://baraoke.tes/
+[Thu Apr 14 17:53:57.506952 2016] [:error] [pid 17806] [client 127.0.0.1:38784] PHP   4. include() /home/serg/site/baraoke/wp-includes/template-loader.php:89, referer: http://baraoke.tes/
+[Thu Apr 14 17:53:57.506972 2016] [:error] [pid 17806] [client 127.0.0.1:38784] PHP   5. get_template_part() /home/serg/site/baraoke/wp-content/themes/baraoke/page-index.php:23, referer: http://baraoke.tes/
+[Thu Apr 14 17:53:57.506992 2016] [:error] [pid 17806] [client 127.0.0.1:38784] PHP   6. locate_template() /home/serg/site/baraoke/wp-includes/general-template.php:171, referer: http://baraoke.tes/
+[Thu Apr 14 17:53:57.507011 2016] [:error] [pid 17806] [client 127.0.0.1:38784] PHP   7. load_template() /home/serg/site/baraoke/wp-includes/template.php:521, referer: http://baraoke.tes/
