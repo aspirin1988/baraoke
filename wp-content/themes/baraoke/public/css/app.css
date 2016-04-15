@@ -502,7 +502,7 @@ color: white;
     color: white;
     text-decoration: blink;
     background-image: url("../img/bg.png");
-    border: #fff 3px solid;
+    border: #E10000 3px solid;
 }
 
 .top-btn:hover{
