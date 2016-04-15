@@ -1,47 +1,12 @@
-<?php
-/**
- * Template part for displaying posts.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package baraoke
- */
+<section class="slide-section gallery-page comments">
+	<h1 class="slide-section-title uk-text-center">Галерея</h1>
+	<?php $gl_cat=get_galls(); foreach($gl_cat as $val): if($val['gallerey']!='slider'): ?>
+	<h2 class="gallery-page-title2"><?php echo $val['gallerey']; ?></h2>
+	<ul class="uk-grid uk-grid-width-1-2 uk-grid-width-medium-1-2 uk-grid-width-large-1-4" data-uk-grid-margin>
+		<?php  $gal=get_gall($val['gallerey']); foreach($gal as $val1): ?>
+		<li><a href="<?=$val1['path']?>" data-uk-lightbox="{group:'<?php echo $val['gallerey'];?>'}"><img src="<?=$val1['path']?>" alt=""></a></li>
+		<?php endforeach; endif; ?>
 
-?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-			if ( is_single() ) {
-				the_title( '<h1 class="entry-title">', '</h1>' );
-			} else {
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			}
-
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php baraoke_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'baraoke' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'baraoke' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php baraoke_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+	</ul>
+	<?php endforeach; ?>
+</section>

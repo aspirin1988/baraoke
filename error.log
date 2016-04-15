@@ -7,3 +7,25 @@
 [Thu Apr 14 17:53:57.506972 2016] [:error] [pid 17806] [client 127.0.0.1:38784] PHP   5. get_template_part() /home/serg/site/baraoke/wp-content/themes/baraoke/page-index.php:23, referer: http://baraoke.tes/
 [Thu Apr 14 17:53:57.506992 2016] [:error] [pid 17806] [client 127.0.0.1:38784] PHP   6. locate_template() /home/serg/site/baraoke/wp-includes/general-template.php:171, referer: http://baraoke.tes/
 [Thu Apr 14 17:53:57.507011 2016] [:error] [pid 17806] [client 127.0.0.1:38784] PHP   7. load_template() /home/serg/site/baraoke/wp-includes/template.php:521, referer: http://baraoke.tes/
+[Fri Apr 15 10:06:21.466321 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP Warning:  mb_substr() expects parameter 1 to be string, array given in /home/serg/site/baraoke/wp-content/themes/baraoke/template-parts/content-index.php on line 114
+[Fri Apr 15 10:06:21.466729 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP Stack trace:
+[Fri Apr 15 10:06:21.467109 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP   1. {main}() /home/serg/site/baraoke/index.php:0
+[Fri Apr 15 10:06:21.467143 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP   2. require() /home/serg/site/baraoke/index.php:17
+[Fri Apr 15 10:06:21.467157 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP   3. require_once() /home/serg/site/baraoke/wp-blog-header.php:16
+[Fri Apr 15 10:06:21.467168 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP   4. include() /home/serg/site/baraoke/wp-includes/template-loader.php:89
+[Fri Apr 15 10:06:21.467181 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP   5. get_template_part() /home/serg/site/baraoke/wp-content/themes/baraoke/page-index.php:23
+[Fri Apr 15 10:06:21.467193 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP   6. locate_template() /home/serg/site/baraoke/wp-includes/general-template.php:171
+[Fri Apr 15 10:06:21.467204 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP   7. load_template() /home/serg/site/baraoke/wp-includes/template.php:521
+[Fri Apr 15 10:06:21.467215 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP   8. require() /home/serg/site/baraoke/wp-includes/template.php:564
+[Fri Apr 15 10:06:21.467226 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP   9. mb_substr() /home/serg/site/baraoke/wp-content/themes/baraoke/template-parts/content-index.php:114
+[Fri Apr 15 10:06:21.467262 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP Warning:  mb_substr() expects parameter 1 to be string, array given in /home/serg/site/baraoke/wp-content/themes/baraoke/template-parts/content-index.php on line 114
+[Fri Apr 15 10:06:21.467273 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP Stack trace:
+[Fri Apr 15 10:06:21.467284 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP   1. {main}() /home/serg/site/baraoke/index.php:0
+[Fri Apr 15 10:06:21.467297 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP   2. require() /home/serg/site/baraoke/index.php:17
+[Fri Apr 15 10:06:21.467308 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP   3. require_once() /home/serg/site/baraoke/wp-blog-header.php:16
+[Fri Apr 15 10:06:21.467333 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP   4. include() /home/serg/site/baraoke/wp-includes/template-loader.php:89
+[Fri Apr 15 10:06:21.467345 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP   5. get_template_part() /home/serg/site/baraoke/wp-content/themes/baraoke/page-index.php:23
+[Fri Apr 15 10:06:21.467356 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP   6. locate_template() /home/serg/site/baraoke/wp-includes/general-template.php:171
+[Fri Apr 15 10:06:21.467365 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP   7. load_template() /home/serg/site/baraoke/wp-includes/template.php:521
+[Fri Apr 15 10:06:21.467375 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP   8. require() /home/serg/site/baraoke/wp-includes/template.php:564
+[Fri Apr 15 10:06:21.467385 2016] [:error] [pid 4694] [client 127.0.0.1:35952] PHP   9. mb_substr() /home/serg/site/baraoke/wp-content/themes/baraoke/template-parts/content-index.php:114

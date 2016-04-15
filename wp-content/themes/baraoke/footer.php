@@ -1,21 +1,21 @@
-<footer class="main-footer">
+<footer id="Контакты" class="main-footer">
 	<section class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-1 uk-grid-width-large-1-2">
 		<aside class="footer-contacts uk-visible-large">
 			<div>
-				<a href=""><img src="<?php bloginfo('template_directory');?>/public/img/logo.png" alt="" class="logo-footer"></a>
+				<a href="/"><img src="<?php the_field('logo',4); ?>" alt="" class="logo-footer"></a>
 				<div class="footer-contacts-info">
 					<div>
 						<img src="<?php bloginfo('template_directory');?>/public/img/marker.png" alt=""><br>
-						<p>г. Алматы<br>ул. Навои, 310а</p>
+						<p><?php the_field('address',4); ?></p>
 						<img src="<?php bloginfo('template_directory');?>/public/img/phone.png" alt=""><br>
-						<p>+7 727 228 19 88<br>+7 747 975 10 22</p>
+						<p><a style="color: #fff;" href="tel:<?php the_field('phone1',4); ?>"><?php the_field('phone1',4); ?></a><br><a style="color: #fff;" href="tel:<?php the_field('phone2',4); ?>"><?php the_field('phone2',4); ?></a></p>
 					</div>
 				</div>
 			</div>
 			<div class="footer-icons uk-text-center">
-				<a href="" class="uk-icon-facebook"></a>
-				<a href="" class="uk-icon-vk"></a>
-				<a href="" class="uk-icon-instagram"></a>
+				<a href="<?php the_field('url-fb',4); ?>" class="uk-icon-facebook"></a>
+				<a href="<?php the_field('url-vk',4); ?>" class="uk-icon-vk"></a>
+				<a href="<?php the_field('url-inst',4); ?>" class="uk-icon-instagram"></a>
 			</div>
 		</aside>
 		<aside class="footer-map">
@@ -29,7 +29,7 @@
 <div id="place-modal" class="form-modal uk-modal">
 	<div class="uk-modal-dialog">
 		<a class="uk-modal-close uk-close"></a>
-		<form action="" class="modal-form">
+		<form class="modal-form blink-mailer">
 			<legend>Бронь кабинки</legend>
 			<div class="uk-form-row">
 				<input type="text" name="ФИО" placeholder="ФИО">
@@ -40,6 +40,7 @@
 			<div class="uk-form-row">
 				<input type="text" name="Почта" placeholder="E-mail">
 			</div>
+			<input style="display: none" type="text" name="title" value="Бронь кабинки">
 			<div class="uk-form-row">
 				<input type="submit" value="Отправить">
 			</div>
@@ -47,6 +48,7 @@
 	</div>
 </div><!-- Slider modal end -->
 
+<a class="scroll-to" href="#header"><div class="top-btn" ><p>^</p></div></a>
 
 
 <!-- Scripts -->
@@ -54,6 +56,31 @@
 <script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/uikit.min.js"></script>
 <script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/components/slideshow.min.js"></script>
 <script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/components/slideshow-fx.min.js"></script>
+<script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/components/lightbox.min.js"></script>
 <script src="<?php bloginfo('template_directory');?>/public/js/app.js"></script>
+<script src="https://callback.blink.kz/resources/callback/js/mailer.js"></script>
+<script>
+	var submitSMG = new BMModule();
+	submitSMG.submitForm(function(success) { $('.blink-mailer input[type=submit]').val('Отправить'); }, function(error) {});
+
+	$('.scroll-to').click(function() {
+		$('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+
+		return false;
+	});
+
+	$(document).scroll(function(){
+		console.log($(document).scrollTop());
+		if ($('*').is('.hr')) {
+			if ($(document).scrollTop() >= $('.hr')[0].offsetTop) {
+				$('.top-btn').show();
+			}
+			else {
+				$('.top-btn').hide();
+			}
+		}
+	});
+
+</script>
 </body>
 </html>

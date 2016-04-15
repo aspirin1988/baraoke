@@ -12,14 +12,14 @@
 <!-- Slider -->
 <div class="main-slider uk-slidenav-position" data-uk-slideshow="{autoplay: false, animation: 'fold'}">
 	<ul class="uk-slideshow">
-		<?php  $slider=get_gall('slider'); print_r($slider); foreach ($slider as $key=> $value): ?>
+		<?php  $slider=get_gall('slider'); /*print_r($slider);*/ foreach ($slider as $key=> $value): ?>
 		<li class="<?php if (!$key) :?>uk-active"<?php endif; ?>">
 			<img src="<?php echo $value['path'];?>" width="" height="" alt="">
 			<?php if (!$key) :?>
 			<div class="uk-overlay-panel uk-overlay-background uk-overlay-fade uk-hidden-small">
 				<div class="overlay-content">
 					<div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto autem commodi perspiciatis sint. Aperiam aspernatur culpa cum distinctio dolore ea eveniet fugit, id sit velit.</p>
+						<p><?php the_field('silder-text') ?></p>
 						<button type="button" class="uk-button uk-button-danger uk-button-large" data-uk-modal="{target:'#place-modal', center:true}">Забронировать кабинку</button>
 					</div>
 				</div>
@@ -65,9 +65,9 @@ $post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>20, 'order'
 </section><!-- Food Menu end -->
 
 <!-- Callback -->
-<section class="callback-section">
+<section class="callback-section" style="background-image: url(<?php the_field('recall',4); ?>)">
 	<div class="uk-grid">
-		<form class="uk-form uk-width-1-1 uk-width-medium-1-1 uk-width-large-1-2">
+		<form class="uk-form uk-width-1-1 uk-width-medium-1-1 uk-width-large-1-2 blink-mailer">
 			<div>
 				<label>Обратная связь</label>
 				<div class="uk-form-row">
@@ -76,6 +76,7 @@ $post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>20, 'order'
 				<div class="uk-form-row">
 					<input type="text" name="Телефон" placeholder="Телефон">
 				</div>
+				<input style="display: none" type="text" name="title" value="ОБРАТНАЯ СВЯЗЬ">
 				<div class="uk-form-row">
 					<input type="submit" value="Отправить">
 				</div>
@@ -85,53 +86,38 @@ $post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>20, 'order'
 </section><!-- Callback -->
 
 <!-- Comments -->
-<section class="slide-section comments">
+<?php $cat=get_category_by_slug('comments');
+$post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>3));?>
+<section id="coments" class="slide-section comments">
 	<h1 class="slide-section-title uk-text-center">Отзывы</h1>
 	<div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-1 uk-grid-width-large-1-3">
+		<?php foreach($post as $key=>$value): ?>
 		<article class="comments-article">
-			<img src="public/img/comments-img.png" alt="">
-			<p class="name">Имя</p>
-			<p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque eligendi
-				inventore magnam porro. Accusantium at consectetur, dolor, exercitationem id laborum maiores
-				mollitia odit officia officiis quidem ratione sed temporibus ut.</p>
+			<img src="<?php echo get_the_post_thumbnail_url($value->ID); ?>" alt="">
+			<p class="name"><?php echo $value->post_title; ?></p>
+			<p class="comment"><?php echo $value->post_content; ?></p>
 		</article>
-		<article class="comments-article">
-			<img src="public/img/comments-img.png" alt="">
-			<p class="name">Имя</p>
-			<p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque eligendi
-				inventore magnam porro. Accusantium at consectetur, dolor, exercitationem id laborum maiores
-				mollitia odit officia officiis quidem ratione sed temporibus ut.</p>
-		</article>
-		<article class="comments-article">
-			<img src="public/img/comments-img.png" alt="">
-			<p class="name">Имя</p>
-			<p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque eligendi
-				inventore magnam porro. Accusantium at consectetur, dolor, exercitationem id laborum maiores
-				mollitia odit officia officiis quidem ratione sed temporibus ut.</p>
-		</article>
+		<?php endforeach; ?>
 	</div>
 </section><!-- Comments end -->
 
 <!-- News -->
+<?php $cat=get_category_by_slug('news');
+$post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>2));?>
 <section class="slide-section news comments">
 	<h1 class="slide-section-title uk-text-center">Новости</h1>
 	<div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-1 uk-grid-width-large-1-2">
+		<?php foreach($post as $key=>$value): ?>
 		<article class="news-article">
-			<p class="time">18 февраля 2016</p>
+			<a href="<?php echo $value->guid; ?>"><p class="time"><?php echo $value->post_date; ?></p></a>
 			<div>
-				<img src="public/img/news-bg.png" alt="">
-				<p class="news-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eligendi molestias odio vel velit? Adipisci animi deserunt eum fuga ipsa, laborum modi molestiae nesciunt non odit perferendis sed ullam, voluptate.</p>
+				<img src="<?php echo get_the_post_thumbnail_url($value->ID); ?>" alt="">
+				<p class="news-content"><?php echo mb_substr($value->post_content,0,128).'...'; ?></p>
 			</div>
 		</article>
-		<article class="news-article">
-			<p class="time">18 февраля 2016</p>
-			<div>
-				<img src="public/img/news-bg.png" alt="">
-				<p class="news-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae eligendi molestias odio vel velit? Adipisci animi deserunt eum fuga ipsa, laborum modi molestiae nesciunt non odit perferendis sed ullam, voluptate.</p>
-			</div>
-		</article>
+		<?php endforeach; ?>
 	</div>
 	<div class="uk-text-center uk-hidden-small">
-		<a href="" class="more-news uk-button uk-button-large">Все новости</a>
+		<a href="/news" class="more-news uk-button uk-button-large">Все новости</a>
 	</div>
 </section><!-- News end -->

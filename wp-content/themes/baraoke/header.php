@@ -16,19 +16,19 @@
 <body>
 <div class="wrapper">
 	<!-- Header -->
-	<header class="main-header uk-visible-large">
+	<header id="header" class=" main-header uk-visible-large">
 		<section class="uk-grid">
 			<div class="uk-text-right uk-width-1-1">
 				<ul class="header-contacts">
 					<li>
 						<img src="<?php bloginfo('template_directory');?>/public/img/marker.png" alt="">
-						<p>г. Алматы, ул. Навои, 310а</p>
+						<p><?php the_field('address',4); ?></p>
 					</li>
 					<li>
 						<img src="<?php bloginfo('template_directory');?>/public/img/phone.png" alt="">
 						<p>
-							<a href="">+7 727 228 19 88</a>
-							<a href="">+7 747 975 10 22</a>
+							<a href="tel:<?php the_field('phone1',4); ?>"><?php the_field('phone1',4); ?></a>
+							<a href="tel:<?php the_field('phone2',4); ?>"><?php the_field('phone2',4); ?></a>
 						</p>
 					</li>
 				</ul>
@@ -38,11 +38,13 @@
 
 	<!-- Navigation -->
 	<nav class="main-navigation uk-navbar">
-		<a href="" class="brand-icon uk-navbar-brand uk-visible-large"><img src="<?php the_field('logo',4); ?>" alt=""></a>
+		<a href="/" class=" hr brand-icon uk-navbar-brand uk-visible-large"><img src="<?php the_field('logo',4); ?>" alt=""></a>
 		<ul class="uk-navbar-nav uk-visible-large">
 			<?php $menu=wp_get_nav_menu_items('main'); foreach ($menu as $key=>$val) { if (!$val->menu_item_parent){ $class='';  $title=get_the_title(); if($title==$val->title){$class='uk-active';} ?>
 				<li class="<?php echo $class;?>"><a href="<?=$val->url?>"><?=$val->title?></a></li>
 			<?php }}?>
+			<li><a class="scroll-to" href="/#coments">Отзывы</a></li>
+			<li><a class="scroll-to" href="/#Контакты">Контакты</a></li>
 		</ul>
 		<a href="#mobile-nav" class="uk-navbar-toggle uk-hidden-large" data-uk-offcanvas></a>
 		<a href="<?php echo get_home_url(); ?>" class="uk-navbar-brand uk-navbar-center uk-hidden-large"><?php echo basename(get_home_url()); ?></a>
