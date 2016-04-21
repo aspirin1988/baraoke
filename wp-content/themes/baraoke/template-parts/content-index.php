@@ -10,21 +10,17 @@
 ?>
 
 <!-- Slider -->
-<div class="main-slider uk-slidenav-position" data-uk-slideshow="{autoplay: false, animation: 'fold'}">
-	<ul class="uk-slideshow">
+<div class="main-slider uk-slidenav-position" data-uk-slideshow="{autoplay: false, animation: 'random-fx'}">
+	<ul class="uk-slideshow uk-overlay-active">
 		<?php  $slider=get_gall('slider'); /*print_r($slider);*/ foreach ($slider as $key=> $value): ?>
 		<li class="<?php if (!$key) :?>uk-active"<?php endif; ?>">
 			<img src="<?php echo $value['path'];?>" width="" height="" alt="">
-			<?php if (!$key) :?>
-			<div class="uk-overlay-panel uk-overlay-background uk-overlay-fade uk-hidden-small">
+			<div class="uk-overlay-panel uk-overlay-background uk-overlay-bottom uk-overlay-slide-bottom uk-hidden-small">
 				<div class="overlay-content">
-					<div>
-						<p><?php the_field('silder-text') ?></p>
-						<button type="button" class="uk-button uk-button-danger uk-button-large" data-uk-modal="{target:'#place-modal', center:true}">Забронировать кабинку</button>
-					</div>
+					<p><?php the_field('silder-text') ?></p>
+					<button type="button" class="uk-button uk-button-danger uk-button-large" data-uk-modal="{target:'#place-modal', center:true}">Забронировать кабинку</button>
 				</div>
 			</div>
-			<?php endif; ?>
 		</li>
 		<?php endforeach; ?>
 	</ul>
@@ -57,7 +53,7 @@ $post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>20, 'order'
 			<ul class="uk-list">
 				<li>Меню</li>
 				<?php foreach($post as $key=>$value): ?>
-					<li><a style="color: #fff;" href="<?php echo $value->guid;?>"><?php echo $value->post_title; ?></a></li>
+					<li><a style="color: #fff;" href="<?php echo $value->guid;?>"><?php echo $value->post_title; ?><span></span></a></li>
 				<?php endforeach; ?>
 			</ul>
 		</div>
@@ -90,14 +86,22 @@ $post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>20, 'order'
 $post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>3));?>
 <section id="coments" class="slide-section comments">
 	<h1 class="slide-section-title uk-text-center">Отзывы</h1>
-	<div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-1 uk-grid-width-large-1-3">
-		<?php foreach($post as $key=>$value): ?>
-		<article class="comments-article">
-			<img src="<?php echo get_the_post_thumbnail_url($value->ID); ?>" alt="">
-			<p class="name"><?php echo $value->post_title; ?></p>
-			<p class="comment"><?php echo $value->post_content; ?></p>
-		</article>
-		<?php endforeach; ?>
+	<div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-1 uk-grid-width-large-1-1">
+		<div class="uk-slidenav-position" data-uk-slider>
+			<div class="uk-slider-container">
+				<ul class="uk-slider uk-grid-width-medium-1-4">
+					<?php foreach($post as $key=>$value): ?>
+						<li class="comments-article">
+							<img src="<?php echo get_the_post_thumbnail_url($value->ID); ?>" alt="">
+							<p class="name"><?php echo $value->post_title; ?></p>
+							<p class="comment"><?php echo $value->post_content; ?></p>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
+			<a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slider-item="previous"></a>
+			<a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slider-item="next"></a>
+		</div>
 	</div>
 </section><!-- Comments end -->
 

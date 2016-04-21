@@ -54,6 +54,7 @@
 <!-- Scripts -->
 <script src="<?php bloginfo('template_directory');?>/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/uikit.min.js"></script>
+<script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/components/slider.min.js"></script>
 <script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/components/slideshow.min.js"></script>
 <script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/components/slideshow-fx.min.js"></script>
 <script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/components/lightbox.min.js"></script>
