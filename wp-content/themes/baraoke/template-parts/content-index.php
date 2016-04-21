@@ -83,7 +83,7 @@ $post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>20, 'order'
 
 <!-- Comments -->
 <?php $cat=get_category_by_slug('comments');
-$post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>3));?>
+$post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>20));?>
 <section id="coments" class="slide-section comments">
 	<h1 class="slide-section-title uk-text-center">Отзывы</h1>
 	<div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-1 uk-grid-width-large-1-1">
