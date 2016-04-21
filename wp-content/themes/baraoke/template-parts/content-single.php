@@ -23,11 +23,11 @@ $cat=get_the_category( $post->ID );
 				<div class="uk-width-1-1 uk-width-medium-1-3 uk-width-large-1-3">
 					<ul class="uk-list">
 						<?php /*print_r($post);*/ foreach($post as $key=>$value ): ?>
-							<li><a <?php if($curent->ID==$value->ID){ echo 'style="text-shadow: #fff 0px 0px 12px"';} ?> href="<?php echo $value->guid;?>" ><?php echo $value->post_title;?></a></li>
+							<li class="uk-text-center"><a <?php if($curent->ID==$value->ID){ echo 'style="text-shadow: #fff 0px 0px 12px"';} ?> href="<?php echo $value->guid;?>" ><?php echo $value->post_title;?></a></li>
 						<?php endforeach; ?>
 					</ul>
 				</div>
-				<div class="services-image uk-width-1-1 uk-width-medium-2-3 uk-width-large-2-3">
+				<div class="services-image uk-width-1-1 uk-text-center uk-width-medium-2-3 uk-width-large-2-3">
 					<img src="<?php echo get_the_post_thumbnail_url($curent->ID,'full')?>" alt="">
 				</div>
 

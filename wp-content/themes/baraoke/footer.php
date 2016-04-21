@@ -71,9 +71,8 @@
 	});
 
 	$(document).scroll(function(){
-		console.log($(document).scrollTop());
 		if ($('*').is('.hr')) {
-			if ($(document).scrollTop() >= $('.hr')[0].offsetTop) {
+			if ($(document).scrollTop() >= $('.hr')[0].offsetTop+250) {
 				$('.top-btn').show();
 			}
 			else {
