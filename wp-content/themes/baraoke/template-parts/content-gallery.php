@@ -7,6 +7,7 @@
 		<li><a href="<?=$val1['path']?>" data-uk-lightbox="{group:'<?php echo $val['gallerey'];?>'}" title="<?=$val1['img_title'];?>"><img src="<?=$val1['path']?>" alt=""></a></li>
 		<?php endforeach; endif; ?>
 	</ul>
+
 	<?php endforeach; ?>
 </section>
 <!--
