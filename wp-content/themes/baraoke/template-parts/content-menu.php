@@ -5,7 +5,7 @@
 	<article class="menu-page">
 		<ul class="switcher-header" data-uk-switcher="{connect:'#my-id', animation: 'slide-right'}">
 			<?php foreach($cat as $key=>$value): ?>
-			<li><a href=""><?=$value->title?></a></li>
+			<li id="<?=$key?>" ><a   href=""><?=$value->title?></a></li>
 			<?php endforeach; ?>
 
 		</ul>
@@ -16,10 +16,17 @@
 				<div class="uk-text-center" style="background-image: url(<?=get_the_post_thumbnail_url($value->ID)  ?>); padding: 5% 0; background-size: cover;">
 					<div style="padding: 20px; background: rgba(0,0,0,0.7); display: inline-block;"><h3 style=" margin: 0; line-height: 1.2;" class="uk-text-center"><?=$value->title?></h3></div>
 				</div>
-				<div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-2 uk-grid-width-large-1-2">
+				<div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-2 uk-grid-width-large-1-2" style="padding: 20px 0;">
 					<?php $args = array( 'cat'=> $value->object_id ,'numberposts'=>20); $post=get_posts($args); foreach($post as $key1=>$value1): ?>
-					<p><?=$value1->post_title?><span class="uk-float-right"><?=get_field('price',$value1->ID)?></span></p>
-					<?php endforeach; ?>
+					<div  >
+						<div style="padding: 10px 0 0 0;"><?=$value1->post_title?><span class="uk-float-right"><?=get_field('price',$value1->ID)?></span></div>
+						<div>
+							<small><?=$value1->post_content?></small>
+						</div>
+						<hr>
+
+					</div>
+						<?php endforeach; ?>
 				</div>
 			</li>
 			<?php endforeach; ?>

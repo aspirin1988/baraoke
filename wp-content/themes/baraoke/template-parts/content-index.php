@@ -17,7 +17,9 @@
 			<img src="<?php echo $value['path'];?>" width="" height="" alt="">
 			<div class="uk-overlay-panel uk-overlay-background uk-overlay-bottom uk-overlay-slide-bottom uk-hidden-small">
 				<div class="overlay-content">
+					<div style="padding: 20px; background: rgba(0,0,0,0.7); display: inline-block;"><h3 style=" margin: 0; line-height: 1.2;" class="uk-text-center">
 					<p><?php the_field('silder-text') ?></p>
+					</div>
 					<button type="button" class="uk-button uk-button-danger uk-button-large" data-uk-modal="{target:'#place-modal', center:true}">Забронировать кабинку</button>
 				</div>
 			</div>
@@ -45,16 +47,15 @@ $post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>1)); ?>
 </section><!-- About end -->
 
 <!-- Food Menu -->
-<?php $cat=get_category_by_slug('menu');
-$post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>20, 'order'=> 'ASC'));?>
+<?php $cat=wp_get_nav_menu_items('menu'); ?>
 <section class="food-menu-section" style="background-image: url(<?php the_field('food',4); ?>)" >
 	<div class="uk-grid">
 		<div class="uk-width-1-1 uk-width-medium-1-1 uk-width-large-1-2">
 			<ul class="uk-list">
 				<li>Меню</li>
-				<?php foreach($post as $key=>$value): ?>
-					<li><a style="color: #fff;" href="<?php echo $value->guid;?>"><?php echo $value->post_title; ?><span></span></a></li>
-				<?php endforeach; ?>
+				<?php foreach($cat as $key=>$value): if ($key<6):?>
+					<li><a style="color: #fff;" href="/menu/#<?=$key?>"><?php echo $value->title; ?><span></span></a></li>
+				<?php endif;  endforeach; ?>
 			</ul>
 		</div>
 	</div>
