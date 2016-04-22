@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/public/css/app.css">
 </head>
 <body>
+<div class="onload" >
 <div class="wrapper">
 	<!-- Header -->
 	<header id="header" class=" main-header uk-visible-large">
