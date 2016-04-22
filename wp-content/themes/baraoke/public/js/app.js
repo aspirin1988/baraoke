@@ -4,13 +4,17 @@
         window.scrollTo(0,0);
         setTimeout(function(){window.scrollTo(0,0)},1);
     }
+
     var yourFunctionName = function(event) {
+        var hash = location.hash;
+       $(hash).trigger('click');
     $('.onload').fadeIn(300);
 
-        var hash = location.hash;
+
         if (hash) {
+
             $('html, body').animate({ scrollTop: $(hash).offset().top-100 }, 600, function () {
-                setTimeout(function(){$(hash).trigger('click')},300);
+
             });
         }
     };
