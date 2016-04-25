@@ -172,12 +172,7 @@ body {
 }
 
 .form-modal form option {
-    background: rgba(0,0,0,0);
-    border: 2px solid #e10000;
-    outline: none;
-    height: 30px;
-    box-sizing: border-box;
-    padding: 0 5px;
+   background-color: #fff;
     color: #000;
 }
 
