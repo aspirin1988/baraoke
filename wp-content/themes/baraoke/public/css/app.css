@@ -161,6 +161,26 @@ body {
     padding: 0 5px;
 }
 
+.form-modal form select {
+    background: rgba(0,0,0,0);
+    border: 2px solid #e10000;
+    outline: none;
+    height: 30px;
+    box-sizing: border-box;
+    padding: 0 5px;
+    color: #ffffff;
+}
+
+.form-modal form option {
+    background: rgba(0,0,0,0);
+    border: 2px solid #e10000;
+    outline: none;
+    height: 30px;
+    box-sizing: border-box;
+    padding: 0 5px;
+    color: #000;
+}
+
 .form-modal form input[type=submit] {
     height: 30px;
     margin-top: 15px;

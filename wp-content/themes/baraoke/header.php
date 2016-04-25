@@ -5,6 +5,8 @@
 	<meta charset="UTF-8">
 	<title><?php the_title(); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="<?=get_field('icon',4)?>" type="image/x-icon"/>
+	<link rel="shortcut icon" href="<?=get_field('icon',4)?>" type="image/x-icon"/>
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/bower_components/uikit/css/uikit.min.css">
@@ -12,6 +14,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/bower_components/uikit/css/components/slideshow.min.css">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/bower_components/uikit/css/components/dotnav.min.css">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/bower_components/uikit/css/components/slidenav.min.css">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/bower_components/uikit/css/components/datepicker.min.css">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/public/css/app.css">
 </head>
 <body>

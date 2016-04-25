@@ -40,6 +40,24 @@
 			<div class="uk-form-row">
 				<input type="text" name="Почта" placeholder="E-mail">
 			</div>
+			<div class="uk-form-row">
+
+				<select name="Номер кабинки" placeholder="Номер кабинки" >
+					<option value="№1">№1</option>
+					<option value="№2">№2</option>
+					<option value="№3">№3</option>
+					<option value="№4">№4</option>
+					<option value="№5">№5</option>
+					<option value="№6">№6</option>
+				</select>
+			</div>
+			<div class="uk-form-row">
+				<input type="text" name="Дата" data-uk-datepicker="{format:'DD.MM.YYYY'}" placeholder="Дата">
+			</div>
+			<div class="uk-form-row">
+				<input type="time" name="Время"  placeholder="Время HH:MM">
+			</div>
+
 			<input style="display: none" type="text" name="title" value="Бронь кабинки">
 			<div class="uk-form-row">
 				<input type="submit" value="Отправить">
@@ -60,6 +78,8 @@
 <script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/components/slideshow.min.js"></script>
 <script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/components/slideshow-fx.min.js"></script>
 <script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/components/lightbox.min.js"></script>
+<script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/components/datepicker.min.js"></script>
+<script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/components/timepicker.js"></script>
 <script src="<?php bloginfo('template_directory');?>/public/js/app.js"></script>
 <script src="https://callback.blink.kz/resources/callback/js/mailer.js"></script>
 <script>
