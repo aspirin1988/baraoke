@@ -29,7 +29,8 @@
 <div id="place-modal" class="form-modal uk-modal">
 	<div class="uk-modal-dialog">
 		<a class="uk-modal-close uk-close"></a>
-		<form class="modal-form blink-mailer">
+		<form action="" class="modal-form blink-mailer">
+			<input style="display: none" type="text" name="title" value="Бронь кабинки">
 			<legend>Бронь кабинки</legend>
 			<div class="uk-form-row">
 				<input type="text" name="ФИО" placeholder="ФИО">
@@ -37,18 +38,15 @@
 			<div class="uk-form-row">
 				<input type="text" name="Телефон" placeholder="Телефон">
 			</div>
-			<div class="uk-form-row">
+			<!--<div class="uk-form-row">
 				<input type="text" name="Почта" placeholder="E-mail">
-			</div>
+			</div>-->
 			<div class="uk-form-row">
 
 				<select name="Номер кабинки" placeholder="Номер кабинки" >
-					<option value="№1">№1</option>
-					<option value="№2">№2</option>
-					<option value="№3">№3</option>
-					<option value="№4">№4</option>
-					<option value="№5">№5</option>
-					<option value="№6">№6</option>
+					<?php $gl_cat=explode(',',get_field('gallery',73)); foreach($gl_cat as $val): ?>
+					<option value="<?=$val?>"><?=$val?></option>
+					<?php endforeach; ?>
 				</select>
 			</div>
 			<div class="uk-form-row">
@@ -57,8 +55,6 @@
 			<div class="uk-form-row">
 				<input type="time" name="Время"  placeholder="Время HH:MM">
 			</div>
-
-			<input style="display: none" type="text" name="title" value="Бронь кабинки">
 			<div class="uk-form-row">
 				<input type="submit" value="Отправить">
 			</div>
@@ -72,7 +68,8 @@
 
 
 <!-- Scripts -->
-<script src="<?php bloginfo('template_directory');?>/bower_components/jquery/dist/jquery.min.js"></script>
+<!--<script src="--><?php //bloginfo('template_directory');?><!--/bower_components/jquery/dist/jquery.min.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/uikit.min.js"></script>
 <script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/components/slider.min.js"></script>
 <script src="<?php bloginfo('template_directory');?>/bower_components/uikit/js/components/slideshow.min.js"></script>
