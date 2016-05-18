@@ -1,7 +1,7 @@
 <footer id="Контакты" class="main-footer">
 	<section class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-1 uk-grid-width-large-1-2">
-		<aside class="footer-contacts uk-visible-large">
-			<div>
+		<aside class="footer-contacts">
+			<div class="uk-visible-large">
 				<a href="/"><img src="<?php the_field('logo',4); ?>" alt="" class="logo-footer"></a>
 				<div class="footer-contacts-info">
 					<div>
@@ -12,10 +12,16 @@
 					</div>
 				</div>
 			</div>
-			<div class="footer-icons uk-text-center">
+			<div class="footer-icons uk-text-center uk-visible-large">
 				<a href="<?php the_field('url-fb',4); ?>" class="uk-icon-facebook"></a>
 				<a href="<?php the_field('url-vk',4); ?>" class="uk-icon-vk"></a>
 				<a href="<?php the_field('url-inst',4); ?>" class="uk-icon-instagram"></a>
+			</div>
+			<div class="uk-hidden-large">
+				<div class="footer-contacts-info" style="text-align: center; width: 100%;">
+					<p style="color: #fff;"><?php the_field('address',4); ?></p>
+					<p><a style="color: #fff;" href="tel:<?php the_field('phone1',4); ?>"><?php the_field('phone1',4); ?></a><br><a style="color: #fff;" href="tel:<?php the_field('phone2',4); ?>"><?php the_field('phone2',4); ?></a></p>
+				</div>
 			</div>
 		</aside>
 		<aside class="footer-map">

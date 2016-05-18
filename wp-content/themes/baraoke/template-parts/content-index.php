@@ -20,7 +20,7 @@
 					<div style="padding: 20px; background: rgba(0,0,0,0.7); display: inline-block;"><h3 style=" margin: 0; line-height: 1.2;" class="uk-text-center">
 					<p><?php the_field('silder-text') ?></p>
 					</div>
-					<button type="button" class="uk-button uk-button-danger uk-button-large" data-uk-modal="{target:'#place-modal', center:true}">Забронировать кабинку</button>
+					<!--<button type="button" class="uk-button uk-button-danger uk-button-large" data-uk-modal="{target:'#place-modal', center:true}">Забронировать кабинку</button>-->
 				</div>
 			</div>
 		</li>
@@ -62,7 +62,7 @@ $post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>1)); ?>
 </section><!-- Food Menu end -->
 
 <!-- Callback -->
-<section class="callback-section" style="background-image: url(<?php the_field('recall',4); ?>)">
+<!--<section class="callback-section" style="background-image: url(<?php /*the_field('recall',4); */?>)">
 	<div class="uk-grid">
 		<form class="uk-form uk-width-1-1 uk-width-medium-1-1 uk-width-large-1-2 blink-mailer">
 			<div>
@@ -80,7 +80,7 @@ $post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>1)); ?>
 			</div>
 		</form>
 	</div>
-</section><!-- Callback -->
+</section><!-- Callback -->-->
 
 <!-- Comments -->
 <?php $cat=get_category_by_slug('comments');
@@ -88,13 +88,17 @@ $post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>20));?>
 <section id="coments" class="slide-section comments">
 	<h1 class="slide-section-title uk-text-center">Отзывы</h1>
 	<div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-1 uk-grid-width-large-1-1">
-		<div class="uk-slidenav-position" data-uk-slider>
+		<div class="uk-slidenav-position" data-uk-slider="{infinite: false}">
 			<div class="uk-slider-container">
-				<ul class="uk-slider uk-grid-width-medium-1-4">
+				<ul class="uk-slider uk-grid-width-small-1-1 uk-grid-width-medium-1-2 uk-grid-width-large-1-3">
 					<?php foreach($post as $key=>$value): ?>
 						<li class="comments-article">
 							<img src="<?php echo get_the_post_thumbnail_url($value->ID); ?>" alt="">
-							<p class="name"><?php echo $value->post_title; ?></p>
+							<div class="flexname">
+								<figure></figure>																   
+								<p class="name"><?php echo $value->post_title; ?></p>
+								<figure></figure>			   
+							</div>				   
 							<p class="comment"><?php echo $value->post_content; ?></p>
 						</li>
 					<?php endforeach; ?>
@@ -110,8 +114,8 @@ $post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>20));?>
 <?php $cat=get_category_by_slug('news');
 $post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>2));?>
 <section class="slide-section news comments">
-	<h1 class="slide-section-title uk-text-center">Новости</h1>
-	<div class="uk-grid uk-grid-width-1-1 uk-grid-width-medium-1-1 uk-grid-width-large-1-2">
+	<h1 class="slide-section-title uk-text-center">Статьи</h1>
+	<div class="uk-grid uk-grid-width-small-1-1 uk-grid-width-medium-1-2 uk-grid-width-large-1-2">
 		<?php foreach($post as $key=>$value): ?>
 		<article class="news-article">
 			<a href="<?php echo $value->guid; ?>"><p class="time"><?php echo $value->post_date; ?></p></a>
@@ -123,6 +127,6 @@ $post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>2));?>
 		<?php endforeach; ?>
 	</div>
 	<div class="uk-text-center uk-hidden-small">
-		<a href="/news" class="more-news uk-button uk-button-large">Все новости</a>
+		<a href="/news" class="more-news uk-button uk-button-large">Все статьи</a>
 	</div>
 </section><!-- News end -->

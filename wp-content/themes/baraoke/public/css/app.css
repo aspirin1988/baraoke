@@ -24,6 +24,10 @@ body {
     display: inline-block;
 }
 
+.mobile-menu-button{
+	float:right;
+}
+
 .header-contacts li {
     float: left;
 }
@@ -347,11 +351,32 @@ body {
     font-size: 16px;
 }
 
+.comments .comments-article .flexname {
+	display: flex;
+	align-items: center;
+}
+
+.comments .comments-article figure {
+    margin: auto 0px;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    flex: 0 1 auto;
+}
+
+.comments .comments-article figure:first-child {
+    margin-right: 7px;
+}
+
+.comments .comments-article figure:last-child {
+    margin-left: 7px;
+}
+
 .comments .comments-article .name {
     font-size: 26px;
     color: #e10000;
-    background: url("../img/name-bg.png") center no-repeat;
     margin: 40px 0;
+	flex: 1 1 auto;
 }
 
 .news {
@@ -567,11 +592,11 @@ color: white;
 }
 
 .menu-page .switcher-header li {
-    text-align: center;
     list-style: none;
     float: left;
-    width: 20%;
-    padding: 10px 0;
+    width: 100%;
+    padding: 10px;
+	text-align: left;
     background: #e10000;
     cursor: pointer;
 }
@@ -641,6 +666,21 @@ color: white;
 
     .main-slider .uk-slideshow li {
         height: auto!important;
+    }
+
+    .news .news-article {
+        text-align: center;
+    }
+
+    .news .news-article img {
+        float: none;
+        margin: 0 0 10px 0;
+        display: inline-block;
+    }
+
+    .news .news-article .news-content {
+        color: #fff;
+        font-size: 16px;
     }
 }
 

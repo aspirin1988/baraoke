@@ -1,16 +1,17 @@
-
 <section class="slide-section gallery-page comments">
 	<h1 class="slide-section-title uk-text-center"><?=get_the_title()?></h1>
 	<?php $cat=wp_get_nav_menu_items('menu'); ?>
 	<article class="menu-page">
-		<ul class="switcher-header" data-uk-switcher="{connect:'#my-id', animation: 'slide-right'}">
+		<div class="uk-grid">
+			<div class="uk-width-1-3 uk-hidden-small">
+				<ul class="switcher-header" data-uk-switcher="{connect:'#my-id', animation: 'slide-right'}">
 			<?php foreach($cat as $key=>$value): ?>
 			<li id="<?=$key?>" ><a   href=""><?=$value->title?></a></li>
 			<?php endforeach; ?>
-
 		</ul>
-
-		<ul id="my-id" class="switcher-content uk-switcher">
+			</div>
+			<div class="uk-width-small-1-1 uk-width-medium-2-3 uk-width-large-2-3">
+				<ul id="my-id" class="switcher-content uk-switcher">
 			<?php foreach($cat as $key=>$value): ?>
 			<li>
 				<div class="uk-text-center" style="background-image: url(<?=get_the_post_thumbnail_url($value->ID)  ?>); padding: 5% 0; background-size: cover;">
@@ -31,6 +32,15 @@
 			</li>
 			<?php endforeach; ?>
 		</ul>
+			</div>
+		</div>
+
+		
 	</article>
 
 </section>
+<script>
+	window.onload = function(){
+		$("#menu-nav").after('<a href="#mobile-menu" class="mobile-menu-button uk-hidden-large uk-navbar-toggle" data-uk-offcanvas></a>');
+	};
+</script>

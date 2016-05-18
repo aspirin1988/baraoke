@@ -51,7 +51,7 @@
 			<li><a class="scroll-to" href="/#coments">Отзывы</a></li>
 			<li><a class="scroll-to" href="/#Контакты">Контакты</a></li>
 		</ul>
-		<a href="#mobile-nav" class="uk-navbar-toggle uk-hidden-large" data-uk-offcanvas></a>
+		<a id="menu-nav" href="#mobile-nav" class="uk-navbar-toggle uk-hidden-large" data-uk-offcanvas></a>
 		<a href="<?php echo get_home_url(); ?>" class="uk-navbar-brand uk-navbar-center uk-hidden-large"><?php echo basename(get_home_url()); ?></a>
 	</nav><!-- Navigation end -->
 
@@ -64,4 +64,15 @@
 				<?php }}?>
 			</ul>
 		</div>
-	</div><!-- Mobile Navigation end -->
+	</div>
+	
+	<div id="mobile-menu" class="uk-offcanvas">
+		<div class="uk-offcanvas-bar uk-offcanvas-bar-flip menu-page">
+			<?php $cat=wp_get_nav_menu_items('menu'); ?>
+			<ul class="switcher-header" data-uk-switcher="{connect:'#my-id', animation: 'slide-right'}">
+			<?php foreach($cat as $key=>$value): ?>
+			<li id="<?=$key?>" ><a   href=""><?=$value->title?></a></li>
+			<?php endforeach; ?>
+		</ul>
+		</div>
+	</div>
