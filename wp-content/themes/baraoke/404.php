@@ -6,6 +6,7 @@
  *
  * @package baraoke
  */
+header("Location: /");
 
 get_header(); ?>
 

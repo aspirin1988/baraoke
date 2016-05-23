@@ -26,6 +26,10 @@
 			<div class="uk-text-right uk-width-1-1">
 				<ul class="header-contacts">
 					<li>
+						<h4 style=" color: white; text-align: left; line-height: 1.5; padding: 0; margin: 0;">Режим работы:</h4>
+						<p style="margin: 0; padding: 0; text-align: left;"><?php the_field('schedule',4); ?></p>
+					</li>
+					<li>
 						<img src="<?php bloginfo('template_directory');?>/public/img/marker.png" alt="">
 						<p><?php the_field('address',4); ?></p>
 					</li>
