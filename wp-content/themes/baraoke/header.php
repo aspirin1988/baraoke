@@ -24,11 +24,9 @@
 		}?>
 	</title>
 	<meta name="description" content="<?php if (is_tax()){ echo $field['description'];}else{ the_field('description');}?>"/>
-	<link rel="shortcut icon" href="<?=get_field('favicon',4)?>">
+	<link rel="shortcut icon" href="<?=get_field('icon',4)?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="<?=get_field('icon',4)?>" type="image/x-icon"/>
-	<link rel="shortcut icon" href="<?=get_field('icon',4)?>" type="image/x-icon"/>
-
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/bower_components/uikit/css/uikit.min.css">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/bower_components/uikit/css/components/slider.min.css">
