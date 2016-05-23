@@ -13,7 +13,7 @@
 				if (get_field('meta-title')){
 					the_field('meta-title');
 				}else{
-					wp_title();}
+					the_title();}
 			}
 		}else{
 			if (get_field('meta-title')){
