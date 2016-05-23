@@ -3,7 +3,28 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title><?php the_title(); ?></title>
+	<?php $current_object=get_queried_object(); $field=get_option($current_object->taxonomy.'_'.$current_object->term_taxonomy_id) ?>
+	<title>Бараоке |
+		<?php
+		if (is_tax()||is_category()){
+			$_title=$field['title'];
+			if ($_title){
+				echo $_title;
+			} else{
+				if (get_field('title')){
+					the_field('title');
+				}else{
+					wp_title();}
+			}
+		}else{
+			if (get_field('title')){
+				the_field('title');
+			}else{
+				wp_title();}
+		}?>
+	</title>
+	<meta name="description" content="<?php if (is_tax()){ echo $field['description'];}else{ the_field('description');}?>"/>
+	<link rel="shortcut icon" href="<?=get_field('favicon',4)?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="<?=get_field('icon',4)?>" type="image/x-icon"/>
 	<link rel="shortcut icon" href="<?=get_field('icon',4)?>" type="image/x-icon"/>
