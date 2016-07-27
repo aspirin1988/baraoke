@@ -65,7 +65,7 @@
 
 	<!-- Navigation -->
 	<nav class="main-navigation uk-navbar">
-		<a href="/" class=" hr brand-icon uk-navbar-brand uk-visible-large"><img src="<?php the_field('logo',4); ?>" alt=""></a>
+		<a href="/" class=" hr brand-icon uk-navbar-brand"><img src="<?php the_field('logo',4); ?>" alt=""></a>
 		<ul class="uk-navbar-nav uk-visible-large">
 			<?php $menu=wp_get_nav_menu_items('main'); foreach ($menu as $key=>$val) { if (!$val->menu_item_parent){ $class='';  $title=get_the_title(); if($title==$val->title){$class='uk-active';} ?>
 				<li class="<?php echo $class;?>"><a href="<?=$val->url?>"><?=$val->title?></a></li>
