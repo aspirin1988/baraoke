@@ -45,7 +45,6 @@ $post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>1)); ?>
 		</article>
 	</div>
 </section><!-- About end -->
-
 <!-- Food Menu -->
 <?php $cat=wp_get_nav_menu_items('menu'); ?>
 <section class="food-menu-section" style="background-image: url(<?php the_field('food',4); ?>)" >
@@ -80,7 +79,7 @@ $post=get_posts($args1 = array( 'cat'=> $cat->cat_ID ,'numberposts'=>1)); ?>
 			</div>
 		</form>
 	</div>
-</section><!-- Callback -->-->
+</section><!-- Callback -->
 
 <!-- Comments -->
 <?php $cat=get_category_by_slug('comments');
